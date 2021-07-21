@@ -2,7 +2,7 @@ import { EventsMap, Msg, Handler } from "../index";
 
 export default class Emit<Events extends EventsMap = any> {
   private events: any = {};
-  async request<K extends keyof Events>(event: K, data: Events[K]) {
+  async request<K extends keyof Events>(event: K, data: Events[K]): Promise<Events[K]> {
     const msg: Msg<Events[K]> = {
       event: event.toString(),
       timestamp: new Date().getTime(),
