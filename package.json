@@ -1,0 +1,48 @@
+{
+	"name": "uemit",
+	"description": "Async emitter",
+	"version": "0.0.1",
+	"source": "./src/index.ts",
+	"main": "./dist/uemit.umd.js",
+	"module": "./dist/uemit.es.js",
+	"unpkg": "./dist/uemit.umd.js",
+	"types": "./index.d.ts",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"serve": "vite preview"
+	},
+	"exports": {
+		".": {
+			"import": "./dist/uemit.es.js",
+			"require": "./dist/uemit.umd.js"
+		}
+	},
+	"devDependencies": {
+		"@types/node": "^16.0.0",
+		"typescript": "^4.3.2",
+		"vite": "^2.3.8"
+	},
+	"directories": {
+		"example": "example"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/kethan/uemit.git"
+	},
+	"keywords": [
+		"router",
+		"browser",
+		"middleware",
+		"navigation",
+		"lightweight",
+		"tiny",
+		"express"
+	],
+	"author": "Kethan Surana",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/kethan/uemit/issues"
+	},
+	"homepage": "https://github.com/kethan/uemit#readme"
+}
