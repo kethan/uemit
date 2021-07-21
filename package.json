@@ -1,7 +1,7 @@
 {
   "name": "uemit",
   "description": "Async emitter",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "source": "./src/index.ts",
   "main": "./dist/uemit.umd.js",
   "module": "./dist/uemit.es.js",
