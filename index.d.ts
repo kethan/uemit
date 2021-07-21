@@ -1,8 +1,7 @@
-interface EventsMap {
+export interface EventsMap {
     [event: string]: any;
 }
-
-interface Msg<T = any> {
+export interface Msg<T = any> {
     timestamp: number;
     event: string;
     data: T;
@@ -10,10 +9,9 @@ interface Msg<T = any> {
 }
 
 export type Promisable<T> = Promise<T> | T;
-export type Handler<T> = (req: Msg<T>) => Promisable<void>;
-
-declare class Emit<Events extends EventsMap = any> {
+export type Handler<T = any> = (req: Msg<T>) => Promisable<void>;
+declare class Emit<T extends EventsMap = any> {
     constructor();
-    request<K extends keyof Events>(event: K, data: Events[K]): Promise<Events[K]>;
-    subscribe<K extends keyof Events = any>(event: K, cb: Handler<Events[K]>): Emit;
+    request<K extends keyof T>(event: K, data: T[K]): Promise<T[K]>;
+    subscribe<K extends keyof T = any>(event: K, cb: Handler<T[K]>): Emit;
 }
