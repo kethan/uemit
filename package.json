@@ -1,12 +1,18 @@
 {
 	"name": "uemit",
 	"description": "Async emitter",
-	"version": "0.0.6",
+	"version": "0.0.7",
 	"source": "./src/index.ts",
 	"main": "./dist/uemit.umd.js",
 	"module": "./dist/uemit.es.js",
 	"unpkg": "./dist/uemit.umd.js",
-	"types": "./index.d.ts",
+	"types": "index.d.ts",
+	"files": [
+		"dist/",
+		"example/",
+		"*.d.ts",
+		"README.md"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
