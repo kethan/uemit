@@ -10,8 +10,8 @@ export interface Msg<T = any> {
 
 export type Promisable<T> = Promise<T> | T;
 export type Handler<T = any> = (req: Msg<T>) => Promisable<void>;
-declare class Emit<T extends EventsMap = any> {
+export default class Emit<T extends EventsMap = any> {
     constructor();
     request<K extends keyof T>(event: K, data: T[K]): Promise<T[K]>;
-    subscribe<K extends keyof T = any>(event: K, cb: Handler<T[K]>): Emit;
+    subscribe<K extends keyof T>(event: K, cb: Handler<T[K]>): Emit;
 }
